@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChepiaoyudingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChepiaoyudingEntity" id="chepiaoyudingMap">
+        <result property="chepiaobianhao" column="chepiaobianhao"/>
+        <result property="chezhanmingcheng" column="chezhanmingcheng"/>
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="zuoweileixing" column="zuoweileixing"/>
+        <result property="chepaihaoma" column="chepaihaoma"/>
+        <result property="cheliangzhaopian" column="cheliangzhaopian"/>
+        <result property="chepiaojiage" column="chepiaojiage"/>
+        <result property="chepiaoshuliang" column="chepiaoshuliang"/>
+        <result property="dingdanjine" column="dingdanjine"/>
+        <result property="yudingshijian" column="yudingshijian"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChepiaoyudingVO" >
+		SELECT * FROM chepiaoyuding  chepiaoyuding         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChepiaoyudingVO" >
+		SELECT  chepiaoyuding.* FROM chepiaoyuding  chepiaoyuding 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChepiaoyudingView" >
+
+		SELECT  chepiaoyuding.* FROM chepiaoyuding  chepiaoyuding 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChepiaoyudingView" >
+		SELECT * FROM chepiaoyuding  chepiaoyuding <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
